@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personnel.Core.Repository",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personnel.Core.Repository.implementation", "Personnel.Core.Repositort.implementation\Personnel.Core.Repository.implementation.csproj", "{231B48AD-68FB-49E5-9CBE-FB8A9212F4BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personnel.Core.UnitOfWork", "Personnel.Core.UnitOfWork\Personnel.Core.UnitOfWork.csproj", "{7645A811-252C-4AFD-999F-E31FAAE5776C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{231B48AD-68FB-49E5-9CBE-FB8A9212F4BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{231B48AD-68FB-49E5-9CBE-FB8A9212F4BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{231B48AD-68FB-49E5-9CBE-FB8A9212F4BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7645A811-252C-4AFD-999F-E31FAAE5776C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7645A811-252C-4AFD-999F-E31FAAE5776C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7645A811-252C-4AFD-999F-E31FAAE5776C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7645A811-252C-4AFD-999F-E31FAAE5776C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
