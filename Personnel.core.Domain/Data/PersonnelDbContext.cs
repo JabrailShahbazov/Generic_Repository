@@ -21,8 +21,5 @@ namespace Personnel.core.Domain.Data
         public DbSet<Personnels>Personnels { get; set; }
         public DbSet<Department>Departments { get; set; }
 
-
-
-
     }
 }
