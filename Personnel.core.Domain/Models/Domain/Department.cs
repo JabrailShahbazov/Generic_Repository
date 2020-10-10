@@ -9,11 +9,11 @@ namespace Personnel.core.Domain.Models.Domain
     {
         public Department()
         {
-            Presonnels = new List<Personnels>();
+            Presonnels = new HashSet<Personnels>();
         }
 
         public long Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Personnels> Presonnels { get; set; }
+        public virtual ICollection<Personnels> Presonnels { get; set; }
     }
 }

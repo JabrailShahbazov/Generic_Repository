@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Personnel.core.Domain.Data;
 using Personnel.core.Domain.Models.Domain;
@@ -13,16 +15,12 @@ namespace Personnel.Core.Repository.implementation.Persistences
         public DepartmentRepository(PersonnelDbContext context) : base(context)
         {
         }
-        public PersonnelDbContext PersonnelDbContext=>_context as PersonnelDbContext;
+        public PersonnelDbContext PersonnelDbContext => Context as PersonnelDbContext;
 
-        public IEnumerable<Department> GetTopDepartments(int count)
-        {
-            return PersonnelDbContext.Departments.Take(count);
-        }
 
-        public IEnumerable<Department> GetDepartmentWithPersonnels()
+        public IQueryable<Department> GetDepartmentWithPersonnel(Expression<Func<Department, bool>> predicate)
         {
-            return PersonnelDbContext.Departments.Include("Personels").ToList();
+            return Context.Set<Department>().Include(x => x.Presonnels).Where(predicate);
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Personnel.core.Domain.Data;
 using Personnel.core.Domain.Models.Domain;
@@ -14,10 +16,11 @@ namespace Personnel.Core.Repository.implementation.Persistences
         public PersonnelRepository(PersonnelDbContext context) : base(context)
         {
         }
-        public PersonnelDbContext PersonnelDbContext => _context as PersonnelDbContext;
-        public IEnumerable<Personnels> GetPersonnelsWithDepartments()
+        public PersonnelDbContext PersonnelDbContext => Context as PersonnelDbContext;
+
+        public IQueryable<Personnels> GetPersonnelsWithDepartments(Expression<Func<Personnels, bool>> predicate)
         {
-            return PersonnelDbContext.Personnels.Include("Department").ToList();
+            return Context.Set<Personnels>().Include(x => x.Department);
         }
     }
 }

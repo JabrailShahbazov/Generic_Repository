@@ -10,7 +10,7 @@ using Personnel.core.Domain.Data;
 namespace Personnel.core.Domain.Migrations
 {
     [DbContext(typeof(PersonnelDbContext))]
-    [Migration("20201009192926_inition")]
+    [Migration("20201010154443_inition")]
     partial class inition
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

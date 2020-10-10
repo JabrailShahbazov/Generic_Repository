@@ -17,17 +17,15 @@ namespace Personnel.Core.UnitOfWork.Persistence
         {
             _context = context;
             Personnel = new PersonnelRepository(_context);
-            Department=new  DepartmentRepository(_context);
-
-
+            Department = new DepartmentRepository(_context);
         }
-        
         public PersonnelRepository Personnel { get; }
         public IDepartmentRepository Department { get; }
         public void Dispose()
         {
             _context.Dispose();
         }
+
         public int Complete()
         {
             return _context.SaveChanges();
