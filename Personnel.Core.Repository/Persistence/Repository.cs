@@ -11,11 +11,11 @@ namespace Personnel.Core.Repository.Persistence
     public class Repository<TEntity> : IRepository<TEntity> where TEntity:class
     {
         protected readonly DbContext Context;
-        private DbContext context;
+
 
         public Repository(DbContext context)
         {
-            this.context = context;
+            Context = context;
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> predicate)
